@@ -1,0 +1,72 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    -ms-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-text-size-adjust: 100%;
+    font-size: 62.5%;
+}
+
+body {
+    background: $c-grey-light;
+    font-size: 14px;
+}
+
+body, button {
+    font-family: 'Telex', sans-serif;
+    color: $c-grey-dark;
+    line-height: 1.5;
+}
+
+h1 {
+    text-rendering: optimizeSpeed;
+    margin: 0 0 1em;
+    line-height: 1.2;
+    @include font-size(36);
+}
+
+@media screen and (min-width: 481px) and (max-width: 770px) {
+    h1 {
+        @include font-size(28);
+    }
+}
+
+@media screen and (max-width: 480px) {
+    h1 {
+        @include font-size(24);
+    }
+}
+
+p {
+    margin: 0 0 1em 0;
+}
+
+button {
+    background: $c-red;
+    display: inline-block;
+    padding: 0.5em 1em;
+    margin: 0.5em;
+    border: 0;
+    color: #fff;
+    @include font-size(16);
+    cursor: pointer;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    text-align: center;
+    vertical-align: middle;
+    white-space: nowrap;
+    -webkit-appearance: none;
+    border-radius: 1.5em;
+    transition: background-color ease 500ms;
+    letter-spacing: 0.1em;
+    outline: none;
+    min-width: 7em;
+
+    &:hover {
+        text-decoration: none;
+        color: #FFF;
+        background: darken($c-red, 10%);
+    }
+}

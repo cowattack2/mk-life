@@ -1,0 +1,52 @@
+$border: 1px solid rgba(0, 0, 0, 0.6);
+$cellSize: 0.75vw;
+$cellMaxSize: 10px;
+$cellMinSize: 5px;
+$noOfCells: 100;
+
+#root {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 2vw;
+    @include font-size(16);
+}
+
+.grid {
+    line-height: 0;
+    margin-bottom: 1em;
+    overflow-x: auto;
+}
+
+.row {
+    display: inline-block;
+    border-right: $border;
+    min-width: $cellMinSize * $noOfCells +1;
+
+    &:last-child {
+        border-bottom: $border; 
+    }
+}
+
+.cell {
+    background-color: $c-grey;
+    display: inline-block;
+    width: $cellSize;
+    max-width: $cellMaxSize;
+    min-width: $cellMinSize;
+    height: $cellSize;
+    max-height: $cellMaxSize;
+    min-height: $cellMinSize;
+    cursor: pointer;
+    border: $border;
+    border-right: none;
+    border-bottom: none;
+
+    &:hover {
+        background-color: darken($c-grey, 10%);
+    }
+}
+
+.controls {
+    margin-bottom: 1em;
+}
